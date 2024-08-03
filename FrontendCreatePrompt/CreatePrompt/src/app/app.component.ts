@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { DialogComponent } from '../dialog/dialog.component';
+import { CreateDialogComponent } from '../dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { HeaderComponent } from '../header/header.component';
+import { MainBodyComponent } from '../main-body/main-body.component';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HeaderComponent, MainBodyComponent, SidebarComponent, CreateDialogComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -17,7 +20,7 @@ export class AppComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogComponent);
+    const dialogRef = this.dialog.open(CreateDialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
