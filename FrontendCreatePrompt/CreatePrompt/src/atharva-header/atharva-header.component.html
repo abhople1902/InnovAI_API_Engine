@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="title">Localisation</span>
+  <span class="subtitle">
+    <a href="#">Master Configuration</a> > Localisation
+  </span>
+  <span class="spacer"></span>
+  <mat-form-field appearance="outline" class="platform-select">
+    <mat-select [(value)]="selectedPlatform">
+      <mat-option value="CWP +5">CWP +5</mat-option>
+      <!-- Add more options as needed -->
+    </mat-select>
+  </mat-form-field>
+  <span class="language-count">{{ languageCount }} Languages</span>
+  <mat-form-field appearance="outline" class="search-input">
+    <!-- <input matInput placeholder="Search..." [(ngModel)]="searchQuery"> -->
+    <button mat-icon-button matSuffix>
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+  <button mat-raised-button color="primary">Add Language</button>
+  <button mat-icon-button>
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>

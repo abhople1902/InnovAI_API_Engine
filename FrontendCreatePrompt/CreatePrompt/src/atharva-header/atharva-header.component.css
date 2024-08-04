@@ -1,0 +1,46 @@
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 64px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+}
+
+.subtitle a {
+  color: #3f51b5; /* Adjust color to match your theme */
+  text-decoration: none;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.platform-select {
+  width: 150px; /* Adjust width if needed */
+  margin-right: 16px;
+}
+
+.language-count {
+  margin-right: 16px;
+  font-size: 14px;
+  color: #666;
+}
+
+.search-input {
+  width: 200px;
+  margin-right: 16px;
+}
+
+button {
+  margin-left: 8px;
+}

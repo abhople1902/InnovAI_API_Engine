@@ -10,32 +10,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-// @Component({
-//   selector: 'app-dialog',
-//   standalone: true,
-  // imports: [CommonModule, MatFormFieldModule, MatDialogModule, FormsModule],
-//   templateUrl: './dialog.component.html',
-//   styleUrl: './dialog.component.css'
-// })
-// export class DialogComponent {
-//   data = {
-//     context: '',
-//     input: '',
-//     outputDesired: ''
-//   };
-
-//   constructor(public dialogRef: MatDialogRef<DialogComponent>) {}
-
-//   onNoClick(): void {
-//     this.dialogRef.close();
-//   }
-
-//   onDoneClick(): void {
-//     this.dialogRef.close(this.data);
-//   }
-// }
-
-
 
 
 @Component({

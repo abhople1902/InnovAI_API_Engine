@@ -5,12 +5,13 @@ import { MatDialog } from '@angular/material/dialog';
 import { HeaderComponent } from '../header/header.component';
 import { MainBodyComponent } from '../main-body/main-body.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
+import { AtharvaHeaderComponent } from '../atharva-header/atharva-header.component';
 import { LocalisationTableComponent } from '../localisation-table/localisation-table.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, MainBodyComponent, SidebarComponent, CreateDialogComponent, LocalisationTableComponent],
+  imports: [RouterOutlet, HeaderComponent, MainBodyComponent, SidebarComponent, CreateDialogComponent, LocalisationTableComponent, AtharvaHeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
