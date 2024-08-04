@@ -1,27 +1,4 @@
-<!-- <h1 mat-dialog-title>Enter Details</h1>
-<div mat-dialog-content>
-  <mat-form-field>
-    <mat-label>Context</mat-label>
-    <input matInput [(ngModel)]="data.context">
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Input</mat-label>
-    <input matInput [(ngModel)]="data.input">
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Output Desired</mat-label>
-    <input matInput [(ngModel)]="data.outputDesired">
-  </mat-form-field>
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Cancel</button>
-  <button mat-button (click)="onDoneClick()">Done</button>
-</div> -->
-
-
-
-
-<h2 mat-dialog-title>Create New Entry</h2>
+<!-- <h2 mat-dialog-title>Create New Entry</h2>
 <mat-dialog-content>
   <form [formGroup]="createForm">
     <mat-form-field class="full-width">
@@ -41,4 +18,25 @@
 <mat-dialog-actions>
   <button mat-button (click)="onCancel()">Cancel</button>
   <button mat-button (click)="onSubmit()" cdkFocusInitial>Submit</button>
+</mat-dialog-actions> -->
+
+
+
+<h2 mat-dialog-title>Create New Entry</h2>
+<mat-dialog-content>
+  <form [formGroup]="createForm">
+    <mat-form-field class="full-width">
+      <mat-label>Input</mat-label>
+      <input matInput formControlName="input">
+    </mat-form-field>
+    <div class="full-width">
+      <label for="fileInput">Upload Excel File</label>
+      <input type="file" id="fileInput" (change)="onFileChange($event)">
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSubmit()" cdkFocusInitial>Submit</button>
 </mat-dialog-actions>
+

@@ -47,16 +47,21 @@ import { CommonModule } from '@angular/common';
 })
 export class CreateDialogComponent {
   createForm: FormGroup;
+  file: File | null = null;
 
   constructor(
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<CreateDialogComponent>
   ) {
     this.createForm = this.fb.group({
-      context: ['', Validators.required],
-      input: ['', Validators.required],
-      outputDesired: ['', Validators.required]
+      input: ['', Validators.required]
     });
+  }
+
+  onFileChange(event: any): void {
+    if (event.target.files.length > 0) {
+      this.file = event.target.files[0];
+    }
   }
 
   onCancel(): void {
@@ -65,7 +70,11 @@ export class CreateDialogComponent {
 
   onSubmit(): void {
     if (this.createForm.valid) {
-      this.dialogRef.close(this.createForm.value);
+      const formData = {
+        ...this.createForm.value,
+        file: this.file
+      };
+      this.dialogRef.close(formData);
     }
   }
 }

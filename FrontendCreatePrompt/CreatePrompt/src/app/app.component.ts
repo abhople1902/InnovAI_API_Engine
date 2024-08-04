@@ -5,11 +5,12 @@ import { MatDialog } from '@angular/material/dialog';
 import { HeaderComponent } from '../header/header.component';
 import { MainBodyComponent } from '../main-body/main-body.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
+import { LocalisationTableComponent } from '../localisation-table/localisation-table.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, MainBodyComponent, SidebarComponent, CreateDialogComponent],
+  imports: [RouterOutlet, HeaderComponent, MainBodyComponent, SidebarComponent, CreateDialogComponent, LocalisationTableComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
