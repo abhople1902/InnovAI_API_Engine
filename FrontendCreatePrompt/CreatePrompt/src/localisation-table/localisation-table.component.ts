@@ -4,6 +4,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateDialogComponent } from '../dialog/dialog.component';
 
 export interface LocalisationData {
   languages: string;
@@ -32,7 +34,7 @@ const ELEMENT_DATA: LocalisationData[] = [
 @Component({
   selector: 'app-localisation-table',
   standalone: true,
-  imports: [MatIconModule, MatCardModule, MatTableModule, MatMenuModule],
+  imports: [MatIconModule, MatCardModule, MatTableModule, MatMenuModule, CreateDialogComponent],
   templateUrl: './localisation-table.component.html',
   styleUrl: './localisation-table.component.css'
 })
@@ -40,5 +42,20 @@ const ELEMENT_DATA: LocalisationData[] = [
 export class LocalisationTableComponent {
   displayedColumns: string[] = ['languages', 'products', 'productType', 'stringsTranslated', 'lastModifiedOn', 'lastModifiedBy', 'actions'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
+  
+  constructor(public dialog: MatDialog) {}
+
+  openCreateDialog(): void {
+    const dialogRef = this.dialog.open(CreateDialogComponent, {
+      width: '400px'
+    });
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      if (result) {
+        console.log('Dialog result:', result);
+        // Handle the result as needed
+      }
+    });
+  }
 }
 

@@ -1,7 +1,14 @@
 <!-- header.component.html -->
 <header class="header">
-  <div class="header-content">
-    <h1>API Engine</h1>
-    <button class="create-button" mat-raised-button color="primary" (click)="openCreateDialog()">Create</button>
-  </div>
+  <mat-toolbar color="primary">
+    <div class="breadcrumb-container">
+      <span class="title">Localisation</span>
+      <span class="subtitle">
+        <a href="#">Master Configuration</a> > Localisation
+      </span>
+    </div>
+    <span class="spacer"></span>
+    <button mat-raised-button color="accent" (click)="openCreateDialog()">Create</button>
+    <img src="../assets/img/img.png" alt="Your Image" class="toolbar-image">
+  </mat-toolbar>
 </header>

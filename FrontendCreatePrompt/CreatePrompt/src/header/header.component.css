@@ -1,24 +1,60 @@
-/* header.component.css */
+/* styles.css or header.component.css */
 .header {
-  background-color: #f8f9fa;
-  padding: 16px;
-  border-bottom: 1px solid #ddd;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.header-content {
+.mat-toolbar {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.create-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
+.spacer {
+  flex: 1 1 auto;
 }
 
-.create-button:hover {
-  background-color: #0056b3;
+button {
+  margin-left: 16px; /* Optional: adjust spacing if needed */
+}
+
+.toolbar-image {
+  height: 50px; /* Adjust size as needed */
+  margin-left: 16px; /* Optional: adjust spacing if needed */
+  align-self: center; /* Center the image vertically */
+}
+
+.separator {
+  margin: 0 8px; /* Adjust the spacing between the items */
+}
+.breadcrumb-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.title {
+  font-size: 18px;
+  font-family: sans-serif;
+  color: black;
+  font-weight: 600;
+  margin-top: 14px;
+  margin-left: 10px;
+}
+.subtitle {
+  font-size: 12px;
+  color: gray;
+  margin-top: 0px;
+  margin-left: 10px;
+}
+.subtitle a {
+  font-size: 12px;
+  color: blue;
+  text-decoration: none;
+}
+.subtitle a:hover {
+  text-decoration: underline;
 }
