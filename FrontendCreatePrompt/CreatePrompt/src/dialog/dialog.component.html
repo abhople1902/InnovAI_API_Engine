@@ -1,26 +1,3 @@
-<!-- <h2 mat-dialog-title>Create New localisation</h2>
-<mat-dialog-content>
-  <form [formGroup]="createForm">
-    <div class="form-group">
-      <label for="paysAdresse">Language : </label>
-      <mat-form-field appearance="outline">
-          <input matInput id="paysAdresse" formControlName="createForm" placeholder="Your desired language">
-      </mat-form-field>
-    </div>
-    <div class="full-width">
-      <label for="fileInput">Upload Excel File</label>
-      <input type="file" id="fileInput" (change)="onFileChange($event)">
-    </div>
-  </form>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-button (click)="onSubmit()" cdkFocusInitial>Submit</button>
-</mat-dialog-actions>
- -->
-
-
-
  <h2 mat-dialog-title>Create New Localisation</h2>
  <mat-dialog-content>
    <form [formGroup]="createForm">
@@ -40,4 +17,22 @@
    <button mat-button (click)="onCancel()">Cancel</button>
    <button mat-button (click)="onSubmit()" cdkFocusInitial>Submit</button>
  </mat-dialog-actions>
+
+
+
+
+
+<!-- Display Data if available -->
+<div *ngIf="result.length > 0">
+  <h3>Results</h3>
+  <mat-table [dataSource]="result" class="mat-elevation-z8">
+    <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+      <th mat-header-cell *matHeaderCellDef>{{ column | titlecase }}</th>
+      <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </mat-table>
+</div>
+
  

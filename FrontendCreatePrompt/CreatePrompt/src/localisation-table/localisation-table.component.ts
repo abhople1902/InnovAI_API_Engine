@@ -35,7 +35,7 @@ const ELEMENT_DATA: LocalisationData[] = [
 @Component({
   selector: 'app-localisation-table',
   standalone: true,
-  imports: [MatIconModule, MatCardModule, MatTableModule, MatMenuModule, CreateDialogComponent],
+  imports: [MatIconModule, MatCardModule, MatTableModule, MatMenuModule],
   templateUrl: './localisation-table.component.html',
   styleUrl: './localisation-table.component.css'
 })

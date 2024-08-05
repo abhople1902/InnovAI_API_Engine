@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -8,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTable, MatTableModule } from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -23,6 +25,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatTable,
+    MatTableModule
   ],
 })
 export class CreateDialogComponent {
@@ -35,7 +39,8 @@ export class CreateDialogComponent {
   constructor(
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<CreateDialogComponent>,
-    private http: HttpClient
+    private http: HttpClient,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.createForm = this.fb.group({
       input: ['', Validators.required],
@@ -51,23 +56,25 @@ export class CreateDialogComponent {
     this.dialogRef.close();
   }
 
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length) {
+      this.file = input.files[0];
+    }
+  }
+
   onSubmit(): void {
-    console.log("onsubmit is clicked");
-    
     if (this.file) {
-      console.log("gone to if");
-      console.log(this.createForm);  
       const prompt = this.createForm.get('prompt')?.value;
       this.processExcel(this.file, prompt).subscribe(
         (response) => {
-          console.log("response is",response);
-          
           this.result = response.result;
           if (this.result.length > 0) {
             this.displayedColumns = Object.keys(this.result[0]);
-            this.dataSource = this.result;
           }
           console.log('Result:', this.result);
+          // Update the data inside the dialog
+          this.dialogRef.updateSize('80%', '80%');
         },
         (error) => {
           console.error('Error:', error);

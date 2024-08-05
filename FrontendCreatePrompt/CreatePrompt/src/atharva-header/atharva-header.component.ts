@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'atharva-header',
   standalone: true,
-  imports: [MainBodyComponent, SidebarComponent, CreateDialogComponent,MatToolbarModule,
+  imports: [MainBodyComponent, SidebarComponent,MatToolbarModule,
     MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
