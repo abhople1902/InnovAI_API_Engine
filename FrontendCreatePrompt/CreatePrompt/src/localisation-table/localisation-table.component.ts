@@ -6,6 +6,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateDialogComponent } from '../dialog/dialog.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 export interface LocalisationData {
   languages: string;

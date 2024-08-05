@@ -1,10 +1,10 @@
-<h2 mat-dialog-title>Create New localisation</h2>
+<!-- <h2 mat-dialog-title>Create New localisation</h2>
 <mat-dialog-content>
   <form [formGroup]="createForm">
     <div class="form-group">
       <label for="paysAdresse">Language : </label>
       <mat-form-field appearance="outline">
-          <input matInput id="paysAdresse" formControlName="pays" placeholder="Your desired language">
+          <input matInput id="paysAdresse" formControlName="createForm" placeholder="Your desired language">
       </mat-form-field>
     </div>
     <div class="full-width">
@@ -17,4 +17,27 @@
   <button mat-button (click)="onCancel()">Cancel</button>
   <button mat-button (click)="onSubmit()" cdkFocusInitial>Submit</button>
 </mat-dialog-actions>
+ -->
 
+
+
+ <h2 mat-dialog-title>Create New Localisation</h2>
+ <mat-dialog-content>
+   <form [formGroup]="createForm">
+     <div class="form-group">
+       <label for="paysAdresse">Language:</label>
+       <mat-form-field appearance="outline">
+         <input matInput id="paysAdresse" formControlName="prompt" placeholder="Your desired language">
+       </mat-form-field>
+     </div>
+     <div class="full-width">
+       <label for="fileInput">Upload Excel File</label>
+       <input type="file" id="fileInput" (change)="onFileChange($event)">
+     </div>
+   </form>
+ </mat-dialog-content>
+ <mat-dialog-actions>
+   <button mat-button (click)="onCancel()">Cancel</button>
+   <button mat-button (click)="onSubmit()" cdkFocusInitial>Submit</button>
+ </mat-dialog-actions>
+ 

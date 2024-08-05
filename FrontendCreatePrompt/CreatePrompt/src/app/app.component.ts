@@ -7,7 +7,7 @@ import { MainBodyComponent } from '../main-body/main-body.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { AtharvaHeaderComponent } from '../atharva-header/atharva-header.component';
 import { LocalisationTableComponent } from '../localisation-table/localisation-table.component';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   standalone: true,
