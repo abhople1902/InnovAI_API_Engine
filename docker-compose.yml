@@ -5,7 +5,7 @@ services:
       context: ./FrontendCreatePrompt/CreatePrompt
       dockerfile: Dockerfile  # Specify the Dockerfile if it's not named "Dockerfile"
     ports:
-      - "4200:80"  # Expose port 80 for Nginx serving Angular app
+      - "80:80"  # Expose port 80 for Nginx serving Angular app
     depends_on:
       - backend
     networks:
